@@ -2,7 +2,7 @@
 
 - Clone the repo using below command.
 
-  **git clone https://github.com/GoCoach/qa-automation.git**
+  **git clone repo_url**
 
 - Install Node.js from below URL.
 
