@@ -9,8 +9,17 @@ export default tseslint.config(
   tseslint.configs.recommended,
   eslintPluginPrettierRecommended,
   {
-    ignores: ["playwright-report", "node_modules", "test-results", "eslint.config.mjs", ".vscode"],
-    rules: { "prettier/prettier": ["error", { endOfLine: "auto" }] },
+    ignores: [
+      "playwright-report",
+      "node_modules",
+      "test-results",
+      "eslint.config.mjs",
+      ".vscode",
+    ],
+    rules: {
+      "prettier/prettier": ["error", { endOfLine: "auto" }],
+      trailingComma: "none",
+    },
   },
   {
     ignores: ["test-results/*", "eslint.config.mjs"],
