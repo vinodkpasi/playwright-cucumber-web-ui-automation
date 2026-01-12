@@ -95,7 +95,8 @@ cd pro
 
 2. Install Node.js from below URL
 ```bash
-https://nodejs.org/en/download
+(https://nodejs.org/en/download)
+
 ```
 
 3. Install dependencies
