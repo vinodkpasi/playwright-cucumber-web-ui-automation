@@ -62,23 +62,41 @@ Scenario: Valid login
 ---
 
 ### `pages/`
+```
+pages/
+│── base.page.ts
+│── login.page.ts
+│── index.ts
+```
+- Encapsulates UI locators and actions
 - Implements **Page Object Model (POM)**
 - Encapsulates locators and UI actions
-
-Files:
-- `base.page.ts` – Common reusable methods
-- `login.page.ts` – Login page actions
+```
+| File            | Responsibility                     |
+| --------------- | ---------------------------------- |
+| `base.page.ts`  | Common actions (click, type, wait) |
+| `login.page.ts` | Login-specific actions             |
+| `index.ts`      | Central export for pages           |
+```
 
 ---
 
 ### `step_definitions/`
+```
 step_definitions/
 │── common.steps.ts
 │── login.steps.ts
 │── index.ts
+```
+- Glue between feature files and page objects
+- Implements Gherkin steps
 
-- Maps Gherkin steps to executable code
-- Uses page objects to perform actions
+Example:
+```ts
+Given('user is on login page', async () => {
+  await loginPage.open();
+});
+```
 
 ---
 
@@ -87,6 +105,15 @@ Reusable helper utilities such as:
 - Browser initialization
 - Logging
 - Reporting helpers
+
+```
+| File         | Use                    |
+| ------------ | ---------------------- |
+| `browser.ts` | Browser initialization |
+| `init.ts`    | Framework bootstrap    |
+| `logger.ts`  | Logging                |
+| `report.ts`  | Test reporting         |
+```
 
 ---
 
