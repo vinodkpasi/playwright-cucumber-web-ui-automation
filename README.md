@@ -19,7 +19,7 @@ The framework follows **Page Object Model (POM)**, and is designed for **scalabi
 ## 📁 Project Structure
 
 ```
-pro/
+project/
 │── .husky/                 # Git hooks
 │── reports/                # Test execution reports
 │── src/
@@ -40,7 +40,48 @@ pro/
 
 ## 🧩 Folder Details
 
-### `features/`
+### `.husky/`
+```
+.husky/
+│── pre-commit
+│── pre-push
+│── commit-msg
+```
+- Git hooks for code quality
+- Runs checks before commit/push (lint, tests, formatting, etc.)
+
+---
+
+### `Configuration Files`
+
+```
+| File                   | Purpose                                        |
+| ---------------------- | ---------------------------------------------- |
+| `package.json`         | Project dependencies & npm scripts             |
+| `tsconfig.json`        | TypeScript configuration                       |
+| `playwright.config.ts` | Playwright setup (browser, timeout, reporters) |
+| `cucumber.json`        | BDD runner configuration                       |
+| `.gitignore`           | Files ignored by Git                           |
+```
+
+---
+
+### `src/`
+
+```
+src/
+│── features/
+│── hooks/
+│── pages/
+│── step_definitions/
+│── utils/
+│── timeouts.ts
+```
+This is where **all automation logic lives**.
+
+---
+
+### `src/features/`
 - Contains **Gherkin (.feature)** files
 - Business-readable test scenarios
 
@@ -54,14 +95,14 @@ Scenario: Valid login
 
 ---
 
-### `hooks/`
+### `src/hooks/`
 - Manages test lifecycle
 - Browser and context initialization
 - Cleanup after scenario execution
 
 ---
 
-### `pages/`
+### `src/pages/`
 ```
 pages/
 │── base.page.ts
@@ -81,7 +122,7 @@ pages/
 
 ---
 
-### `step_definitions/`
+### `src/step_definitions/`
 ```
 step_definitions/
 │── common.steps.ts
@@ -100,7 +141,7 @@ Given('user is on login page', async () => {
 
 ---
 
-### `utils/`
+### `src/utils/`
 Reusable helper utilities such as:
 - Browser initialization
 - Logging
@@ -117,7 +158,7 @@ Reusable helper utilities such as:
 
 ---
 
-### `timeouts.ts`
+### `src/timeouts.ts`
 Reusable helper utilities such as:
 - Centralized timeout values
 - Avoids hardcoded waits
