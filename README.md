@@ -21,19 +21,20 @@ The framework follows **Page Object Model (POM)**, and is designed for **scalabi
 ```
 project/
 │── .husky/                 # Git hooks
-│── reports/                # Test execution reports
 │── src/
 │   │── features/           # Gherkin feature files
 │   │── hooks/              # Before / After hooks
-│   │── pages/              # Page Object Model classes
+│   │── pages/              # Page Object Model 
 │   │── step_definitions/   # Step definitions (glue code)
 │   │── utils/              # Reusable utilities
 │   │── timeouts.ts         # Centralized timeouts
-│── playwright.config.ts    # Playwright configuration
+│── test-results            # Test execution reports
+│── .gitignore              # Files/Folders ignored by Git  
+│── app.env                 # Application environment details
 │── cucumber.json           # BDD runner configuration
 │── package.json            # Project dependencies & scripts
-│── tsconfig.json           # TypeScript configuration
 │── README.md               # Project documentation
+│── tsconfig.json           # TypeScript configuration
 ```
 
 ---
@@ -60,7 +61,7 @@ project/
 | ---------------------- | ---------------------------------------------- |
 | `package.json`         | Project dependencies & npm scripts             |
 | `tsconfig.json`        | TypeScript configuration                       |
-| `playwright.config.ts` | Playwright setup (browser, timeout, reporters) |
+| `timeouts.ts`          | Centralized timeouts                           |
 | `cucumber.json`        | BDD runner configuration                       |
 | `.gitignore`           | Files ignored by Git                           |
 
