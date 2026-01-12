@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { BrowserContext, Page } from "@playwright/test";
-import { LoginPage } from "../pages";
+import { LoginPage, WebTablePage } from "../pages";
 export const fixture = {
   // @ts-ignore
   page: undefined as Page,
@@ -13,4 +13,7 @@ export const fixture = {
 
   // @ts-ignore
   loginPage: undefined as LoginPage,
+
+  // @ts-ignore
+  webTablePage: undefined as WebTablePage,
 };

@@ -6,7 +6,7 @@ import { invokeBrowser } from "../utils/browser";
 import fs from "fs-extra";
 import { createLogger } from "winston";
 import { getLoggerOptions } from "../utils/logger";
-import { LoginPage } from "../pages";
+import { LoginPage, WebTablePage } from "../pages";
 
 import timeouts from "../timeouts";
 let browser: Browser;
@@ -39,6 +39,7 @@ Before(async function ({ pickle }) {
   fixture.context = context;
   fixture.logger = createLogger(getLoggerOptions(pickle.name));
   fixture.loginPage = new LoginPage(page);
+  fixture.webTablePage = new WebTablePage(page);
 });
 
 After(async function ({ pickle, result }) {
