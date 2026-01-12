@@ -87,7 +87,7 @@ This is where **all automation logic lives**.
 ```
 features/
 │── login.feature
-│── login.feature
+│── webtable.feature
 
 ```
 
@@ -150,8 +150,9 @@ pages/
 ```
 step_definitions/
 │── common.steps.ts
-│── login.steps.ts
 │── index.ts
+│── login.steps.ts
+│── webtable.steps.ts
 ```
 
 - Glue between feature files and page objects
