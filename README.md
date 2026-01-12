@@ -169,6 +169,14 @@ npx playwright test --headed
 
 ---
 
+## Parallel execution
+
+- By default, 3 scenarios will be executed in the serial mode.
+- To run the scenarios in the parallel mode you can set the count using the **default-->parallel** attribute of **cucumber.json** file located under the root directory.
+- You can set **parallel:1** for serial execution.
+
+---
+
 ## 🔐 Git Hooks (Husky)
 
 Husky is configured to:
