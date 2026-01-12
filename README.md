@@ -1,14 +1,14 @@
 # Playwright BDD Automation Framework
 
-This repository contains a **Playwright + BDD (Cucumber / Reqnroll) + TypeScript** based test automation framework.  
-The framework follows **Page Object Model (POM)**, **SOLID principles**, and is designed for **scalability, maintainability, and CI/CD readiness**.
+This repository contains a **Playwright + BDD (Cucumber) + TypeScript** based test automation framework.  
+The framework follows **Page Object Model (POM)**, and is designed for **scalability, maintainability, and CI/CD readiness**.
 
 ---
 
 ## 🚀 Tech Stack
 
 - **Playwright** – UI automation
-- **BDD (Cucumber / Reqnroll)** – Gherkin-based test scenarios
+- **BDD (Cucumber)** – Gherkin-based test scenarios
 - **TypeScript** – Strongly typed language support
 - **Node.js / npm** – Dependency management
 - **Husky** – Git hooks for code quality
@@ -90,7 +90,7 @@ Reusable helper utilities such as:
 1. Clone the repository
 ```bash
 git clone <repository-url>
-cd pro
+cd folderName
 ```
 
 2. Install Node.js from below URL
@@ -108,6 +108,21 @@ npm install
 ```bash
 npx playwright install
 ```
+
+---
+
+## Application Environment and Credentials
+
+- Because of security reason email credentials are not present inside any file. You need to set it using environment variables.
+- Open the command prompt in the root directory.
+- Run the **SET BASEURL=BASEURL** command to set the email.
+- Run the **SET EMAIL=EMAIL** command to set the email.
+- Run the **SET PASSWORD=PASSWORD** command to set the email password.
+- Run the **SET BROWSER=chrome|firefox|webkit** command to set the browser. Default is chrome.
+- Run the **SET HEADLESS=true|false** command to set the browser headless mode. Default is false.
+- Run the **SET REPORT_OVERWRITE=true|false** command to overwrite/preserve the report. Default is true.
+- You can also set all above keys using **app.env** file located in the root  
+  directory.
 
 ---
 
@@ -130,17 +145,27 @@ npx playwright test --headed
 
 ---
 
-## 📊 Reports
+## 📊 Reports & Logs
 
-- Execution reports are generated inside the **`reports/`** folder
-- HTML and JSON reports supported
+- Multiple Cucumber Html Report is integrated.
+- After execution, report file **index.html** is created under **test-results\reports** directory.
+- Screenshot and video will be attached for failed scenarios.
+- Logs files are available under **test-results\logs** directory.
+- Video files are available under **test-results\videos** directory.
 
 ---
 
 ## 🔁 Retry & Flaky Test Handling
 
-- Playwright retry mechanism can be enabled via `playwright.config.ts`
-- Scenario-level retries supported in BDD runner
+### Retry for failed scenarios
+
+- By defaut, failed scenarios will run again.
+- You can configure the retry behavior for scenarios using **retry** attribute of **cucumber.json** file located under the root directory.
+
+### Retry for failed tests
+
+- Run the **npm run execute:failed** command to execute the failed test cases.
+- You can configure the retry behavior using **rerun** attribute of **cucumber.json** file located under the root directory.
 
 ---
 
@@ -162,18 +187,9 @@ Husky is configured to:
 
 ---
 
-## 🛠 Future Enhancements
-
-- Allure reporting integration
-- Parallel execution optimization
-- Docker support
-- API + UI combined testing
-
----
-
 ## 👤 Author
 
-**Vinod Kumar**
+**Your Name**
 
 ---
 
