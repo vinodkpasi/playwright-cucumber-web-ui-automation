@@ -54,7 +54,6 @@ project/
 
 ### `Configuration Files`
 
-```
 | File                   | Purpose                                        |
 | ---------------------- | ---------------------------------------------- |
 | `package.json`         | Project dependencies & npm scripts             |
@@ -62,7 +61,6 @@ project/
 | `playwright.config.ts` | Playwright setup (browser, timeout, reporters) |
 | `cucumber.json`        | BDD runner configuration                       |
 | `.gitignore`           | Files ignored by Git                           |
-```
 
 ---
 
@@ -109,16 +107,15 @@ pages/
 │── login.page.ts
 │── index.ts
 ```
+
 - Encapsulates UI locators and actions
 - Implements **Page Object Model (POM)**
 - Encapsulates locators and UI actions
-```
 | File            | Responsibility                     |
 | --------------- | ---------------------------------- |
 | `base.page.ts`  | Common actions (click, type, wait) |
 | `login.page.ts` | Login-specific actions             |
 | `index.ts`      | Central export for pages           |
-```
 
 ---
 
@@ -147,14 +144,12 @@ Reusable helper utilities such as:
 - Logging
 - Reporting helpers
 
-```
 | File         | Use                    |
 | ------------ | ---------------------- |
 | `browser.ts` | Browser initialization |
 | `init.ts`    | Framework bootstrap    |
 | `logger.ts`  | Logging                |
 | `report.ts`  | Test reporting         |
-```
 
 ---
 
