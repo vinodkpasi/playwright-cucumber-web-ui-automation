@@ -98,10 +98,9 @@ features/
 Example:
 
 ```gherkin
-Scenario: Valid login
-  Given user is on login page
-  When user enters valid credentials
-  Then user should see dashboard
+  Scenario: Login fails with invalid credentials
+    When I login with username "wronguser" and password "wrongpass"
+    Then I should see login error message "Invalid username or password!"
 ```
 
 ---
@@ -130,8 +129,9 @@ Example:
 ```
 pages/
 │── base.page.ts
-│── login.page.ts
 │── index.ts
+│── login.page.ts
+│── webtable.page.ts
 ```
 
 - Encapsulates UI locators and actions
@@ -141,8 +141,9 @@ pages/
 | File            | Responsibility                     |
 | --------------- | ---------------------------------- |
 | `base.page.ts`  | Common actions (click, type, wait) |
-| `login.page.ts` | Login-specific actions             |
 | `index.ts`      | Central export for pages           |
+| `login.page.ts` | Login-specific actions             |
+| `webtable.page.ts` | Webtable-specific actions             |
 
 ---
 
@@ -162,8 +163,12 @@ step_definitions/
 Example:
 
 ```ts
-Given("user is on login page", async () => {
-  await loginPage.open();
+Given("I open the DemoQA Login page", async function () {
+  await fixture.loginPage.open();
+  await expect(fixture.loginPage.username).toBeVisible({
+    timeout: timeouts.EXPECT,
+  });
+  fixture.logger.info("User has navigated to the login page");
 });
 ```
 
