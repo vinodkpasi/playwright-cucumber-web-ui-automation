@@ -1,53 +1,40 @@
 import { type Locator, type Page, expect } from "@playwright/test";
-import timeouts from "../timeouts";
 import { BasePage } from "./base.page";
 
 export class LoginPage extends BasePage {
   readonly page: Page;
-  readonly emailInput: Locator;
-  readonly continueLoginButton: Locator;
-  readonly passwordInput: Locator;
-  readonly loginButton: Locator;
-  readonly userProfileIcon: Locator;
-  readonly signoutButton: Locator;
+  username: Locator;
+  password: Locator;
+  loginBtn: Locator;
+  errorMsg: Locator;
+  profileHeader: Locator;
 
   constructor(page: Page) {
     super(page);
 
     this.page = page;
-    this.emailInput = page.getByPlaceholder("Email Address");
-    this.continueLoginButton = page.getByRole("button", { name: "Continue with login" });
-    this.passwordInput = page.getByPlaceholder("Password");
-    this.loginButton = page.getByRole("button", { name: "Login" });
-    this.userProfileIcon = page.locator("header .MuiAvatar-img").last();
-    this.signoutButton = page.locator("li[role='menuitem']").getByText("Sign out");
+    this.username = page.locator("#userName");
+    this.password = page.locator("#password");
+    this.loginBtn = page.locator("#login");
+    this.errorMsg = page.locator("#name");
+    this.profileHeader = page.locator("text=Profile");
   }
 
-  async goto() {
+  async open() {
     await this.page.goto("/login");
-    await expect(this.page).toHaveTitle("Login - SkillCycle", { timeout: timeouts.EXPECT });
   }
 
-  async enterEmail(email: string = process.env.EMAIL) {
-    await this.emailInput.clear();
-    await this.emailInput.fill(email);
+  async login(user: string, pass: string) {
+    await this.username.fill(user);
+    await this.password.fill(pass);
+    await this.loginBtn.click();
   }
 
-  async enterPassword(password: string = process.env.PASSWORD) {
-    await this.passwordInput.clear();
-    await this.passwordInput.fill(password);
+  async isLoginSuccessful(): Promise<boolean> {
+    return this.profileHeader.isVisible();
   }
 
-  async submitLogin() {
-    await this.loginButton.click();
-  }
-
-  async conitnueLogin() {
-    await this.continueLoginButton.click();
-  }
-
-  async signout() {
-    await this.userProfileIcon.click();
-    await this.signoutButton.click();
+  async getErrorMessage(): Promise<string> {
+    return (await this.errorMsg.textContent()) ?? "";
   }
 }

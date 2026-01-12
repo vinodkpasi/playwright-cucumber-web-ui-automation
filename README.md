@@ -206,9 +206,9 @@ npx playwright install
 
 - Because of security reason email credentials are not present inside any file. You need to set it using environment variables.
 - Open the command prompt in the root directory.
-- Run the **SET BASEURL=BASEURL** command to set the email.
-- Run the **SET EMAIL=EMAIL** command to set the email.
-- Run the **SET PASSWORD=PASSWORD** command to set the email password.
+- Run the **SET BASEURL=BASEURL** command to set the application url.
+- Run the **SET USERNAME=USERNAME** command to set the username.
+- Run the **SET PASSWORD=PASSWORD** command to set the password.
 - Run the **SET BROWSER=chrome|firefox|webkit** command to set the browser. Default is chrome.
 - Run the **SET HEADLESS=true|false** command to set the browser headless mode. Default is false.
 - Run the **SET REPORT_OVERWRITE=true|false** command to overwrite/preserve the report. Default is true.

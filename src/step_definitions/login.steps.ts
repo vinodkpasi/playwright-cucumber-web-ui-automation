@@ -5,41 +5,32 @@ import { expect } from "@playwright/test";
 import timeouts from "../timeouts";
 dotenv.config({ path: "app.env" });
 
-Given("The user is on the login page", async function () {
-  await fixture.loginPage.goto();
-  await expect(fixture.loginPage.emailInput).toBeVisible({ timeout: timeouts.EXPECT });
+Given("I open the DemoQA Login page", async function () {
+  await fixture.loginPage.open();
+  await expect(fixture.loginPage.username).toBeVisible({
+    timeout: timeouts.EXPECT,
+  });
   fixture.logger.info("User has navigated to the login page");
 });
 
-When(/^The user enters the email "([^"]*)"$/, async (email: string) => {
-  await fixture.loginPage.enterEmail(email);
-  fixture.logger.info("User has entered the email");
+When(
+  "I login with username {string} and password {string}",
+  async function (username: string, password: string) {
+    await fixture.loginPage.login(username, password);
+  }
+);
+
+Then("I should be logged in successfully", async function () {
+  const result = await fixture.loginPage.isLoginSuccessful();
+  expect(result).toBeTruthy();
+  fixture.logger.info("User has logged-in to the application successfully");
 });
 
-When(/^The user enters the password "([^"]*)"$/, async (password: string) => {
-  await fixture.loginPage.enterPassword(password);
-  fixture.logger.info("User has entered the password");
-});
-
-When(/^The user leaves email blank$/, async () => {
-  await fixture.loginPage.emailInput.clear();
-  fixture.logger.info("User has cleared the email");
-});
-
-When(/^The user leaves password blank$/, async () => {
-  await fixture.loginPage.passwordInput.clear();
-  fixture.logger.info("User has cleared the password");
-});
-
-Then(/^The user should be logged into to the application$/, async () => {
-  await expect(fixture.loginPage.emailInput).toBeHidden({ timeout: timeouts.EXPECT });
-  await expect(fixture.loginPage.userProfileIcon).toBeVisible({ timeout: timeouts.EXPECT });
-  fixture.logger.info("User has redirected to the dashboard");
-});
-
-Then("The user signs out of the application", async function () {
-  await fixture.loginPage.signout();
-  await expect(fixture.loginPage.userProfileIcon).toBeHidden({ timeout: timeouts.EXPECT });
-  await expect(fixture.loginPage.signoutButton).toBeHidden({ timeout: timeouts.EXPECT });
-  fixture.logger.info("User has successfully sign out of the application");
-});
+Then(
+  "I should see login error message {string}",
+  async function (message: string) {
+    const error = await fixture.loginPage.getErrorMessage();
+    expect(error).toContain(message);
+      fixture.logger.info("User has not logged-in to the application");
+  }
+);
