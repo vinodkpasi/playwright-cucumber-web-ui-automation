@@ -240,24 +240,6 @@ npx playwright install
 
 ## ▶️ Running Tests
 
-### Run all tests
-
-```bash
-npm test
-```
-
-### Run tests with tags
-
-```bash
-npm test -- --tags "@smoke"
-```
-
-### Run in headed mode
-
-```bash
-npx playwright test --headed
-```
-
 - Open the command prompt in the root directory.
 - Run the **npm run execute** command to execute the test cases.
 
