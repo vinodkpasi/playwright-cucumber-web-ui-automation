@@ -80,6 +80,12 @@ This is where **all automation logic lives**.
 ---
 
 ### `src/features/`
+```
+features/
+│── login.feature
+│── login.feature
+
+```
 - Contains **Gherkin (.feature)** files
 - Business-readable test scenarios
 
@@ -94,10 +100,19 @@ Scenario: Valid login
 ---
 
 ### `src/hooks/`
-- Manages test lifecycle
-- Browser and context initialization
-- Cleanup after scenario execution
+```
+hooks/
+│── hooks.ts
+│── pageFixture.ts
+```
 
+- Before / After hooks
+- Browser, context, page lifecycle
+- Shared Playwright objects across steps
+
+Example:
+- Launch browser before scenario
+- Close browser after scenario
 ---
 
 ### `src/pages/`
@@ -218,6 +233,8 @@ npm test -- --tags "@smoke"
 ```bash
 npx playwright test --headed
 ```
+- Open the command prompt in the root directory.
+- Run the **npm run execute** command to execute the test cases.
 
 ---
 
