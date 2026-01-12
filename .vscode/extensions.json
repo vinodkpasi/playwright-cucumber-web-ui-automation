@@ -1,8 +1,8 @@
 {
-    "recommendations": [
-        "ms-playwright.playwright",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "alexkrechik.cucumberautocomplete"
-    ]
-  }
+  "recommendations": [
+    "ms-playwright.playwright",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "alexkrechik.cucumberautocomplete"
+  ]
+}

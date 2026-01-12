@@ -17,7 +17,7 @@ When(
   "I login with username {string} and password {string}",
   async function (username: string, password: string) {
     await fixture.loginPage.login(username, password);
-  }
+  },
 );
 
 Then("I should be logged in successfully", async function () {
@@ -31,6 +31,6 @@ Then(
   async function (message: string) {
     const error = await fixture.loginPage.getErrorMessage();
     expect(error).toContain(message);
-      fixture.logger.info("User has not logged-in to the application");
-  }
+    fixture.logger.info("User has not logged-in to the application");
+  },
 );

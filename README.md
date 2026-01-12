@@ -41,12 +41,14 @@ project/
 ## 🧩 Folder Details
 
 ### `.husky/`
+
 ```
 .husky/
 │── pre-commit
 │── pre-push
 │── commit-msg
 ```
+
 - Git hooks for code quality
 - Runs checks before commit/push (lint, tests, formatting, etc.)
 
@@ -75,21 +77,25 @@ src/
 │── utils/
 │── timeouts.ts
 ```
+
 This is where **all automation logic lives**.
 
 ---
 
 ### `src/features/`
+
 ```
 features/
 │── login.feature
 │── login.feature
 
 ```
+
 - Contains **Gherkin (.feature)** files
 - Business-readable test scenarios
 
 Example:
+
 ```gherkin
 Scenario: Valid login
   Given user is on login page
@@ -100,6 +106,7 @@ Scenario: Valid login
 ---
 
 ### `src/hooks/`
+
 ```
 hooks/
 │── hooks.ts
@@ -111,11 +118,14 @@ hooks/
 - Shared Playwright objects across steps
 
 Example:
+
 - Launch browser before scenario
 - Close browser after scenario
+
 ---
 
 ### `src/pages/`
+
 ```
 pages/
 │── base.page.ts
@@ -136,18 +146,21 @@ pages/
 ---
 
 ### `src/step_definitions/`
+
 ```
 step_definitions/
 │── common.steps.ts
 │── login.steps.ts
 │── index.ts
 ```
+
 - Glue between feature files and page objects
 - Implements Gherkin steps
 
 Example:
+
 ```ts
-Given('user is on login page', async () => {
+Given("user is on login page", async () => {
   await loginPage.open();
 });
 ```
@@ -155,7 +168,9 @@ Given('user is on login page', async () => {
 ---
 
 ### `src/utils/`
+
 Reusable helper utilities such as:
+
 - Browser initialization
 - Logging
 - Reporting helpers
@@ -170,7 +185,9 @@ Reusable helper utilities such as:
 ---
 
 ### `src/timeouts.ts`
+
 Reusable helper utilities such as:
+
 - Centralized timeout values
 - Avoids hardcoded waits
 
@@ -179,23 +196,27 @@ Reusable helper utilities such as:
 ## ⚙️ Installation
 
 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd folderName
 ```
 
 2. Install Node.js from below URL
+
 ```bash
 https://nodejs.org/en/download
 
 ```
 
 3. Install dependencies
+
 ```bash
 npm install
 ```
 
 4. Install Playwright browsers
+
 ```bash
 npx playwright install
 ```
@@ -220,19 +241,23 @@ npx playwright install
 ## ▶️ Running Tests
 
 ### Run all tests
+
 ```bash
 npm test
 ```
 
 ### Run tests with tags
+
 ```bash
 npm test -- --tags "@smoke"
 ```
 
 ### Run in headed mode
+
 ```bash
 npx playwright test --headed
 ```
+
 - Open the command prompt in the root directory.
 - Run the **npm run execute** command to execute the test cases.
 
@@ -289,4 +314,3 @@ npx playwright test --headed
 ## 📄 License
 
 This project is licensed for internal and educational use.
-

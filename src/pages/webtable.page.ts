@@ -33,6 +33,7 @@ export class WebTablePage extends BasePage {
     await this.addNewRecordButton.click();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async fillForm(data: any) {
     await this.firstName.fill(data.firstName);
     await this.lastName.fill(data.lastName);

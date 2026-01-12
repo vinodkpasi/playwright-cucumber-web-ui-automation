@@ -21,5 +21,5 @@ Then(
   async function (name: string) {
     const visible = await fixture.webTablePage.isRecordVisible(name);
     expect(visible).toBeTruthy();
-  }
+  },
 );

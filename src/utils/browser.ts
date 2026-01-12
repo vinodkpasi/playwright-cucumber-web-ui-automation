@@ -2,7 +2,10 @@ import { LaunchOptions, chromium, firefox, webkit } from "@playwright/test";
 import timeouts from "../timeouts";
 
 const options: LaunchOptions = {
-  headless: process.env.HEADLESS != null ? process.env.HEADLESS.toLowerCase() === "true" : false,
+  headless:
+    process.env.HEADLESS != null
+      ? process.env.HEADLESS.toLowerCase() === "true"
+      : false,
   args: ["--start-maximized"],
   slowMo: timeouts.SLOWMOTION,
 };

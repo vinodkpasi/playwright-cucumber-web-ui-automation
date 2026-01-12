@@ -18,10 +18,10 @@ export default tseslint.config(
     ],
     rules: {
       "prettier/prettier": ["error", { endOfLine: "auto" }],
-      trailingComma: "none",
+      trailingComma: "off",
     },
   },
   {
     ignores: ["test-results/*", "eslint.config.mjs"],
-  }
+  },
 );

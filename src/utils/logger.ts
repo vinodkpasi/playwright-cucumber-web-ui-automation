@@ -8,7 +8,7 @@ export function getLoggerOptions(scenarioName: string, level: string = "info") {
         level: level,
         format: format.combine(
           format.align(),
-          format.printf((info) => `${info.level}: ${info.message}`)
+          format.printf((info) => `${info.level}: ${info.message}`),
         ),
       }),
     ],
