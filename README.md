@@ -111,6 +111,7 @@ pages/
 - Encapsulates UI locators and actions
 - Implements **Page Object Model (POM)**
 - Encapsulates locators and UI actions
+
 | File            | Responsibility                     |
 | --------------- | ---------------------------------- |
 | `base.page.ts`  | Common actions (click, type, wait) |
