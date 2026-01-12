@@ -72,6 +72,11 @@ Files:
 ---
 
 ### `step_definitions/`
+step_definitions/
+│── common.steps.ts
+│── login.steps.ts
+│── index.ts
+
 - Maps Gherkin steps to executable code
 - Uses page objects to perform actions
 
@@ -82,6 +87,13 @@ Reusable helper utilities such as:
 - Browser initialization
 - Logging
 - Reporting helpers
+
+---
+
+### `timeouts.ts`
+Reusable helper utilities such as:
+- Centralized timeout values
+- Avoids hardcoded waits
 
 ---
 
