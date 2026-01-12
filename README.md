@@ -270,14 +270,6 @@ npx playwright test --headed
 
 ---
 
-## 🔐 Git Hooks (Husky)
-
-Husky is configured to:
-- Enforce commit message standards
-- Run checks before commit and push
-
----
-
 ## 🧪 Best Practices Followed
 
 - Page Object Model (POM)
