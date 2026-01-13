@@ -24,12 +24,12 @@ project/
 │── src/
 │   │── features/           # Gherkin feature files
 │   │── hooks/              # Before / After hooks
-│   │── pages/              # Page Object Model 
+│   │── pages/              # Page Object Model
 │   │── step_definitions/   # Step definitions (glue code)
 │   │── utils/              # Reusable utilities
 │   │── timeouts.ts         # Centralized timeouts
 │── test-results            # Test execution reports
-│── .gitignore              # Files/Folders ignored by Git  
+│── .gitignore              # Files/Folders ignored by Git
 │── app.env                 # Application environment details
 │── cucumber.json           # BDD runner configuration
 │── package.json            # Project dependencies & scripts
@@ -57,13 +57,13 @@ project/
 
 ### `Configuration Files`
 
-| File                   | Purpose                                        |
-| ---------------------- | ---------------------------------------------- |
-| `package.json`         | Project dependencies & npm scripts             |
-| `tsconfig.json`        | TypeScript configuration                       |
-| `timeouts.ts`          | Centralized timeouts                           |
-| `cucumber.json`        | BDD runner configuration                       |
-| `.gitignore`           | Files ignored by Git                           |
+| File            | Purpose                            |
+| --------------- | ---------------------------------- |
+| `package.json`  | Project dependencies & npm scripts |
+| `tsconfig.json` | TypeScript configuration           |
+| `timeouts.ts`   | Centralized timeouts               |
+| `cucumber.json` | BDD runner configuration           |
+| `.gitignore`    | Files ignored by Git               |
 
 ---
 
@@ -138,12 +138,12 @@ pages/
 - Implements **Page Object Model (POM)**
 - Encapsulates locators and UI actions
 
-| File            | Responsibility                     |
-| --------------- | ---------------------------------- |
-| `base.page.ts`  | Common actions (click, type, wait) |
-| `index.ts`      | Central export for pages           |
-| `login.page.ts` | Login-specific actions             |
-| `webtable.page.ts` | Webtable-specific actions             |
+| File               | Responsibility                     |
+| ------------------ | ---------------------------------- |
+| `base.page.ts`     | Common actions (click, type, wait) |
+| `index.ts`         | Central export for pages           |
+| `login.page.ts`    | Login-specific actions             |
+| `webtable.page.ts` | Webtable-specific actions          |
 
 ---
 
