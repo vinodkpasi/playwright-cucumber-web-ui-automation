@@ -247,8 +247,20 @@ npx playwright install
 
 ## ▶️ Running Tests
 
-- Open the command prompt in the root directory.
-- Run the **npm run execute** command to execute the test cases.
+### Run all tests
+```bash
+npm run execute
+```
+
+### Run tests with tags
+```bash
+npm run execute -- --tags "@positive"
+```
+
+### Run all failed tests
+```bash
+npm run execute:failed
+```
 
 ---
 
