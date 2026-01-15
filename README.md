@@ -254,7 +254,7 @@ npm run execute
 
 ### Run tests with tags
 ```bash
-npm run execute -- --tags "@positive"
+npm run execute:tag --tags="@positive"
 ```
 
 ### Run all failed tests
